@@ -15,6 +15,7 @@ A neobrutalist theme for [Obsidian](https://obsidian.md). Flat fills, hard shado
 - **Graph view, Bases, Properties and embeds** styled to match.
 - **File explorer.** Plus and minus folder carets, a green guide line under open folders, and roomier list spacing.
 - **Clean PDF export.** Hard shadows are dropped when you export or print, while borders and colors stay.
+- **Plugin support.** Ultra Budget Tracker gets square corners to match the rest of the theme.
 
 ## Install
 
@@ -49,7 +50,7 @@ Without the plugin, Brutato uses the defaults shown in the screenshot.
 
 ## Inspiration
 
-Brutato follows the guidance in [Brutalist Web Design](https://brutalist-web.design/), [Neobrutalism: Definition and Best Practices](https://www.nngroup.com/articles/neobrutalism/) from Nielsen Norman Group, [neubrutalism.com](https://neubrutalism.com/) and [neobrutalism.dev](https://www.neobrutalism.dev/). The playful, snappy feel was inspired by [PostHog](https://posthog.com)'s website.
+Brutato follows the guidance in [Brutalist Web Design](https://brutalist-web.design/), [Neobrutalism: Definition and Best Practices](https://www.nngroup.com/articles/neobrutalism/) from Nielsen Norman Group, [neubrutalism.com](https://neubrutalism.com/) and [neobrutalism.dev](https://www.neobrutalism.dev/).
 
 ## License
 

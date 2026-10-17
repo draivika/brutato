@@ -1,6 +1,6 @@
 /* ==========================================================================
    Brutato — a neobrutalist theme for Obsidian
-   Version 0.1.0 · Drai
+   Version 0.1.1 · Drai
    Flat fills, hard shadows, square corners, calm note text.
 
    Variables are set on body:is(.theme-light, .theme-dark) so they win over
@@ -644,6 +644,29 @@ textarea:focus {
 .workspace-tab-header-container {
   border-bottom: var(--brutato-border) solid var(--brutato-line);
 }
+/* Keep the top bar free of vertical lines except the tabs' own borders:
+   the sidebar dividers stop at the bottom of the top bar on every platform
+   (on macOS Obsidian otherwise runs them up through the top bar). */
+body.is-hidden-frameless {
+  --divider-vertical-height: calc(100% - var(--header-height));
+}
+/* The first tab starts flush with the sidebar edge, so its left border sits
+   exactly where the sidebar line ends below it. */
+.workspace-split.mod-root {
+  --tab-container-padding-start: 0px;
+}
+/* The sidebar's edge line is moved onto the main area's first 2px, where the
+   first tab's left border is drawn, so the two meet in one straight line. */
+.workspace-split.mod-left-split > .workspace-leaf-resize-handle {
+  inset-inline-end: calc(var(--divider-width) * -1);
+}
+.workspace-split.mod-root .workspace-tab-header-container-inner > .workspace-tab-header.is-active:first-child {
+  box-shadow:
+    inset var(--tab-outline-width) 0 0 0 var(--tab-outline-color),
+    0 calc(var(--tab-outline-width) * -1) 0 0 var(--tab-outline-color),
+    var(--tab-outline-width) 0 0 0 var(--tab-outline-color),
+    var(--tab-outline-width) calc(var(--tab-outline-width) * -1) 0 0 var(--tab-outline-color);
+}
 
 /* ---- Callouts: bordered box, filled title bar, hard shadow.
         Colors are set here (not through --callout-color) so they work on
@@ -974,6 +997,29 @@ select:focus-visible,
 /* Hover previews: header strip under the border */
 .popover.hover-popover {
   box-shadow: var(--brutato-shadow-l);
+}
+
+/* ---- Plugin support: Ultra Budget Tracker
+        The plugin sets its own corner sizes, so Obsidian's corner settings
+        never reach it. Square its boxes, chips and bars to match Brutato.
+        True circles (category dots, colour swatches, the round add button)
+        stay round. */
+body .finance-budget {
+  --fin-radius: 0px;
+}
+body .fin-chip,
+body .fin-merchant-chip,
+body .fin-badge,
+body .fin-sheet,
+body .fin-legend-swatch,
+body .fin-hbar-track,
+body .fin-hbar-fill,
+body .fin-account-icon {
+  border-radius: 0;
+}
+/* The selected chip keeps the same black border as the others. */
+body .fin-chip.is-active {
+  border-color: var(--brutato-line);
 }
 
 /* ==========================================================================
